@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple DOM</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            margin: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="text">Hello</h2>
+
+    <button id="changeText">Change Text</button>
+    <button id="countBtn">Count 0</button>
+
+    <br><br>
+
+    <button id="addBtn">Add Item</button>
+    <button id="deleteBtn">Delete Last</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        // get elements
+        let text = document.getElementById("text");
+        let changeText = document.getElementById("changeText");
+        let countBtn = document.getElementById("countBtn");
+        let addBtn = document.getElementById("addBtn");
+        let deleteBtn = document.getElementById("deleteBtn");
+        let list = document.getElementById("list");
+
+        // change text
+        changeText.addEventListener("click", () => {
+            text.textContent = "Text Changed!";
+        });
+
+        // counter
+        let count = 0;
+        countBtn.addEventListener("click", () => {
+            count = count + 1;
+            countBtn.textContent = "Count " + count;
+        });
+
+        // ADD item
+        let itemNumber = 1;
+        addBtn.addEventListener("click", () => {
+            let li = document.createElement("li");
+            li.textContent = "Item " + itemNumber;
+            itemNumber = itemNumber + 1;
+            list.appendChild(li);
+        });
+
+        // DELETE last item
+        deleteBtn.addEventListener("click", () => {
+            if (list.lastChild) {
+                list.lastChild.remove();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

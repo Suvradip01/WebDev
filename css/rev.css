@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
+#box{
+    background-color: brown;
+    color:white;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: zoominout 2s ease-in-out infinite;
+}
+@keyframes zoominout {
+    0% {
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%,-50%)scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%,-50%)scale(1);
+    }
+}
+
+.button{
+    background-color: rgb(95, 235, 95);
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* preserve centering when we scale by including translate in the transform */
+    transform: translate(-50%,-50%) scale(1);
+    transform-origin: center center;
+    margin-top: 100px;
+    transition: transform 0.2s ease;
+}
+
+
+.button:hover{
+    background-color: rgb(5, 191, 5);
+    cursor: pointer;
+    /* include the same translate so scaling doesn't remove centering */
+    transform: translate(-50%,-50%) scale(1.2);
+}
+
+
+/* center the parent in the viewport using relative positioning */
+#parent {
+    margin-top:300px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: purple;
+    color: white;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* center the child inside the parent using relative offsets */
+#parent #child{
+    background-color: orange;
+    color: rgb(255, 255, 255);
+    height: 50px;
+    width: 100px; 
+
+}

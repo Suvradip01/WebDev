@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Core Concepts</title>
+</head>
+
+<body>
+
+    <h2>Open Console (F12)</h2>
+
+    <script>
+        /* =====================================
+           1️⃣ EVENT LOOP (WHAT & WHY)
+        ===================================== */
+
+        /*
+        Concept:
+        JavaScript runs code line by line.
+        Some tasks (setTimeout) are delayed.
+        Event loop runs delayed tasks AFTER main code.
+        */
+
+        console.log("Event Loop Start");
+
+        setTimeout(() => {
+            console.log("Event Loop Timeout");
+        }, 0);
+
+        console.log("Event Loop End");
+
+        /*
+        Output order:
+        Event Loop Start
+        Event Loop End
+        Event Loop Timeout
+        */
+
+
+        /* =====================================
+           2️⃣ ASYNC / AWAIT (WHAT & WHY)
+        ===================================== */
+
+        /*
+        Concept:
+        Async code takes time.
+        await pauses execution until work finishes.
+        Looks like normal code, but it's not blocking.
+        */
+
+        const wait = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Async Finished");
+                }, 2000);
+            });
+        };
+
+        const asyncExample = async () => {
+            console.log("Async Start");
+            let result = await wait();
+            console.log(result);
+            console.log("Async End");
+        };
+
+        asyncExample();
+
+        /*
+        Output:
+        Async Start
+        (wait 2 seconds)
+        Async Finished
+        Async End
+        */
+
+
+        /* =====================================
+           3️⃣ CLOSURES (WHAT & WHY)
+        ===================================== */
+
+        /*
+        Concept:
+        Function remembers variables even after it finishes.
+        */
+
+        const makeCounter = () => {
+            let count = 0;
+
+            return () => {
+                count++;
+                console.log("Closure Count:", count);
+            };
+        };
+
+        const counter = makeCounter();
+
+        counter(); // 1
+        counter(); // 2
+        counter(); // 3
+
+    </script>
+
+</body>
+
+</html>

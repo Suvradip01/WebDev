@@ -1,0 +1,76 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: rgb(24, 24, 26);
+}
+
+
+#parent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: large;
+    font-family: cursive;
+    text-align: center;
+}
+
+/*#child1 span styles only the <span> tags inside the element with id="child1".
+ - color: blueviolet (text color)
+ - display: inline-block (so we can use transform/animation on it)
+ - animation: zoominout 2s ease-in-out infinite (runs the zoom animation forever)
+*/
+#child1 span {
+    color: blueviolet;
+    display: inline-block;
+    animation: zoominout 2s ease-in-out infinite;
+
+}
+
+/*
+This creates the "zoominout" animation.
+At 0% and 100% it is normal size (scale 1).
+At 50% it grows to 1.2 times bigger (scale 1.2).
+It smoothly zooms in and out.
+*/
+@keyframes zoominout {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#child2 span {
+    color: rgb(43, 134, 226);
+    text-shadow: 0 0 30px rgb(59, 157, 255);
+    display: inline-block;
+    animation: wave 1.5s ease-in-out infinite;
+    /*name a animation any to use like wave here*/
+}
+
+/* Makes the text move up and down like a wave */
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

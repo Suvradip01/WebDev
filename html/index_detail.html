@@ -1,0 +1,124 @@
+<!DOCTYPE html> <!-- declares this document is HTML5 -->
+<html lang="en"> <!-- sets page language to English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- character encoding (UTF-8 = supports all characters) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes page fit all screen sizes -->
+    <title>Hyper Text Markup Language</title> <!-- browser tab title -->
+</head>
+
+<body> <!-- webpage visible content starts here -->
+
+    <h1>this is header tag h1 (h1>h2>h3>h4>h5>h6)</h1> <!-- largest heading -->
+    <hr> <!-- horizontal line -->
+
+    <p>this is paragraph tag</p> <!-- paragraph text -->
+
+    <ol> this is ordered list <!-- ordered (numbered) list -->
+        <li></li> <!-- list item -->
+        <li></li> <!-- list item -->
+        <li></li> <!-- list item -->
+    </ol>
+
+    <ul> this is unordered list <!-- unordered (bulleted) list -->
+        <li></li> <!-- list item -->
+        <li></li> <!-- list item -->
+        <li></li> <!-- list item -->
+    </ul>
+
+    <p>this is image tag</p>
+    <img src="./image.png" alt="image" width="20%" height="auto"> <!-- image inside current folder -->
+    <br>
+    <img src="../image.png" alt="image" width="20%" height="auto"> <!-- image from parent folder -->
+
+    <p>this is an anchor tag (hyperlink)</p>
+    <a href="https://luminist-s.vercel.app/">Luminist</a> <!-- clickable link to website -->
+    <br><br><br>
+
+    <p>this is video tag</p>
+    <video autoplay loop muted controls src="./vid.mp4" alt="video" width="30%" height="auto"></video>
+    <!-- video tag with autoplay, loop, and controls -->
+    <br><br>
+
+    <p>this is a form tag</p><br><br>
+
+    <form> <!-- form for user input -->
+        Enter Name: <input type="text"><br><br> <!-- text input -->
+        Enter Password: <input type="password"> <!-- password input -->
+        Enter Date: <input type="datetime-local"><br> <!-- date & time input -->
+
+        Male <input type="radio" name="gender" id="male"> <!-- radio button for male -->
+        Female <input type="radio" name="gender" id="female"> <!-- radio button for female -->
+        <br>
+
+        checkbox: <input type="checkbox"> <!-- checkbox input -->
+        <br>
+        color: <input type="color"> <!-- color picker -->
+    </form>
+
+    <br><br>
+
+    <form> <!-- another form with placeholders -->
+        form with placeholder <br><br>
+        Name: <input type="email" name="email" id="email" placeholder="Enter your email"><br><br> <!-- email input -->
+        Select file: <input type="file" name="file" id="file" placeholder="choose file"><br><br> <!-- file upload -->
+        Enter number : <input type="number" name="number" id="number"><br><br> <!-- numeric input -->
+        range: <input type="range" name="range" id="range"><br> <!-- range slider -->
+    </form>
+
+    <div> hi </div> <!-- generic division/container tag -->
+
+    <nav> <!-- navigation area -->
+        <a href="#">Home</a> | <!-- link to homepage -->
+        <a href="#">About</a> | <!-- link to about page -->
+        <a href="#">Contact</a> <!-- link to contact page -->
+    </nav>
+
+    <h2>Student Information Table</h2> <!-- heading for table -->
+
+    <table border="2" cellpadding="8" cellspacing="0"> <!-- table with border and spacing -->
+        <tr> <!-- table row -->
+            <th>Roll No</th> <!-- table header (bold by default) -->
+            <th>Name</th> <!-- table header -->
+            <th>Class</th> <!-- table header -->
+            <th>Marks</th> <!-- table header -->
+        </tr>
+
+        <tr> <!-- first data row -->
+            <td>1</td> <!-- roll number -->
+            <td>Suvradip</td> <!-- name -->
+            <td>10</td> <!-- class -->
+            <td>95</td> <!-- marks -->
+        </tr>
+
+        <tr> <!-- second data row -->
+            <td>2</td> <!-- roll number -->
+            <td>Rahul</td> <!-- name -->
+            <td>10</td> <!-- class -->
+            <td>90</td> <!-- marks -->
+        </tr>
+
+        <tr> <!-- third data row -->
+            <td>3</td> <!-- roll number -->
+            <td>Rajdeep</td> <!-- name -->
+            <td>10</td> <!-- class -->
+            <td>88</td> <!-- marks -->
+        </tr>
+    </table> <!-- table ends -->
+
+    <br><br>
+
+    <table border="1" cellpadding="10" cellspacing="0"> <!-- second table -->
+        <tr>
+            <th>car</th> <!-- table header -->
+            <th>model</th> <!-- table header -->
+        </tr>
+
+        <tr>
+            <td>bmw</td> <!-- car name -->
+            <td>m4</td> <!-- car model -->
+        </tr>
+    </table>
+</body>
+
+</html>

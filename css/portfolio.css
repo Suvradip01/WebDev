@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    font-family: "Righteous", sans-serif;
+}
+
+nav {
+    padding: 30px 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbarlinks {
+    display: flex;
+    gap: 60px;
+}
+
+.navbarlinks a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.5s ease, text-decoration-color 0.5s ease;
+    /* Smooth hover */
+}
+
+nav h1 {
+    color: rgb(234, 7, 255);
+    text-shadow: 0 0 30px rgb(255, 255, 255);
+}
+
+.navbarlinks a:hover {
+    color: rgb(238, 7, 255);
+    /* Purple color */
+    text-decoration: underline;
+    /* Underline effect */
+}
+
+/* 🎬 This is the full video section that holds both videos */
+.videosection {
+    position: relative;   /* Makes this section the "parent" for absolute positioning */
+    width: 100%;          /* Covers the full width of the screen */
+    height: 100vh;        /* Takes the full height of your screen (vh = viewport height) */
+    overflow: hidden;     /* Hides any part of the video that goes outside the section */
+}
+
+/* 🎞️ Styling for both videos inside the section */
+.videosection video {
+    position: absolute;   /* Lets the video sit exactly where we place it (top-left corner) */
+    top: 0;               /* Starts from the very top of the section */
+    left: 0;              /* Starts from the very left of the section */
+    width: 100%;          /* Video covers full width of the section */
+    height: 100%;         /* Video covers full height of the section */
+    object-fit: cover;    /* Makes sure video fills the area without stretching (may crop edges a bit) */
+}
+
+/* ✨ This is for the second video that sits on top of the first one */
+.video2 {
+    mix-blend-mode: screen;  /* Blends the top video with the one below (like a visual mix effect) */
+    opacity: 0.8;            /* Makes the top video a bit see-through (0 = invisible, 1 = solid) */
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Browser Events</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: lightgray;
+            margin-top: 20px;
+            line-height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="text">Browser Events</h2>
+
+    <button id="clickBtn">Click Me</button>
+    <button id="dblClickBtn">Double Click Me</button>
+
+    <div id="box">Hover Me</div>
+
+    <p id="message"></p>
+
+    <script>
+        let text = document.getElementById("text");
+        let clickBtn = document.getElementById("clickBtn");
+        let dblClickBtn = document.getElementById("dblClickBtn");
+        let box = document.getElementById("box");
+        let message = document.getElementById("message");
+
+        // CLICK event
+        clickBtn.addEventListener("click", () => {
+            message.textContent = "Button clicked!";
+        });
+
+        // DOUBLE CLICK event
+        dblClickBtn.addEventListener("dblclick", () => {
+            message.textContent = "Button double clicked!";
+        });
+
+        // MOUSE OVER event
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "black";
+            box.style.color = "white";
+            box.textContent = "Mouse Over";
+        });
+
+        // MOUSE OUT event
+        box.addEventListener("mouseout", () => {
+            box.style.backgroundColor = "lightgray";
+            box.style.color = "black";
+            box.textContent = "Hover Me";
+        });
+
+        // KEYBOARD event
+        document.addEventListener("keydown", () => {
+            text.textContent = "Key Pressed!";
+        });
+
+        // PAGE LOAD event
+        window.addEventListener("load", () => {
+            console.log("Page Loaded");
+        });
+    </script>
+
+</body>
+
+</html>
