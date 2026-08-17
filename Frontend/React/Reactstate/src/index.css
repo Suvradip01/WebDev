@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  background: white;
+}
+
+.container {
+  text-align: center;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  cursor: pointer;
+}
